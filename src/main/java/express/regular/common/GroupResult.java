@@ -1,4 +1,4 @@
-package regexpress.common;
+package express.regular.common;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,12 +7,22 @@ import java.util.List;
  * Created by bdh92123 on 2016-09-26.
  */
 public class GroupResult extends BaseResult<List<Object>> {
+    private List<String> columns = new ArrayList<String>();
+
     public GroupResult() {
         setResultList(new ArrayList<List<Object>>());
     }
 
     public GroupResult(List<List<Object>> data) {
         setResultList(data);
+    }
+
+    public List<String> getColumns() {
+        return columns;
+    }
+
+    public void setColumns(List<String> columns) {
+        this.columns = columns;
     }
 
     public String toString() {

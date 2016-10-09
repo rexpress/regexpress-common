@@ -1,4 +1,4 @@
-package regexpress.common;
+package express.regular.common;
 
 /**
  * Created by bdh92123 on 2016-09-26.

@@ -1,9 +1,20 @@
-package regexpress.common;
+package express.regular.common;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by bdh92123 on 2016-09-26.
  */
 public class MatchResult  extends BaseResult<Boolean>{
+
+    public MatchResult() {
+        setResultList(new ArrayList<Boolean>());
+    }
+
+    public MatchResult(List<Boolean> data) {
+        setResultList(data);
+    }
 
     public String toString() {
         int i, j;
