@@ -12,7 +12,6 @@ import java.util.Map;
  */
 public abstract class Tester {
     private Gson gson = new Gson();
-    public static final String CONFIG_IS_DEBUG = "is_debug";
 
     protected static ByteArrayOutputStream debugOutputStream = new ByteArrayOutputStream();
     protected static PrintStream debugStream = new PrintStream(debugOutputStream);
@@ -33,13 +32,9 @@ public abstract class Tester {
         } catch (Throwable e) {
             result = new TestResult();
             result.setException(e);
-            e.printStackTrace();
         } finally {
-            boolean isDebug = configMap != null && configMap.containsKey(CONFIG_IS_DEBUG) && (Boolean) configMap.get(CONFIG_IS_DEBUG);
             debugStream.flush();
-            if(isDebug) {
-                result.setDebugOutput(debugOutputStream.toString());
-            }
+            result.setDebugOutput(debugOutputStream.toString());
         }
 
         if(result != null) {
