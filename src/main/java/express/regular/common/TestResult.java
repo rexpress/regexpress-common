@@ -14,7 +14,7 @@ public class TestResult {
     private String debugOutput;
     private Type type;
     private BaseResult result;
-    private Throwable exception;
+    private String exception;
 
     public String getDebugOutput() {
         return debugOutput;
@@ -25,11 +25,11 @@ public class TestResult {
     }
 
 
-    public Throwable getException() {
+    public String getException() {
         return exception;
     }
 
-    public void setException(Throwable exception) {
+    public void setException(String exception) {
         this.exception = exception;
     }
 

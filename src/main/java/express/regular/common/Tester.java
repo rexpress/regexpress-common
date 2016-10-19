@@ -31,7 +31,7 @@ public abstract class Tester {
             result = testRegex(configMap, testStrings);
         } catch (Throwable e) {
             result = new TestResult();
-            result.setException(e);
+            result.setException(e.getClass().getName() + ": " +e.getLocalizedMessage());
         } finally {
             debugStream.flush();
             result.setDebugOutput(debugOutputStream.toString());
