@@ -6,14 +6,14 @@ import java.util.List;
 /**
  * Created by bdh92123 on 2016-09-26.
  */
-public class GroupResult extends BaseResult<List<Object>> {
+public class GroupResult extends BaseResult<List<String>> {
     private List<String> columns = new ArrayList<String>();
 
     public GroupResult() {
-        setResultList(new ArrayList<List<Object>>());
+        setResultList(new ArrayList<List<String>>());
     }
 
-    public GroupResult(List<List<Object>> data) {
+    public GroupResult(List<List<String>> data) {
         setResultList(data);
     }
 
@@ -29,7 +29,7 @@ public class GroupResult extends BaseResult<List<Object>> {
         int i, j;
         StringBuffer resultBuffer = new StringBuffer();
         for(i=0;i<resultList.size();i++) {
-            List<Object> row = resultList.get(i);
+            List<String> row = resultList.get(i);
             for(j=0;j<row.size();j++) {
                 resultBuffer.append(row.get(j)).append(" ");
             }
